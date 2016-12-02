@@ -1,36 +1,31 @@
 $("document").ready(function() {
 
-    
 
 
-    $("input").on("keydown", function search(e) {
+
+
+    $("body").on("keypress", function search(e) {
         if (e.keyCode == 13) {
-            
-            
 
-            var newAnimal = $(this).val();
+            var newAnimalName = $(this).val();
+            var newAnimalBtn = $('<input type="button"/>');
+            $(newAnimalBtn).val("newAnimalName");
+            newAnimalBtn.appendTo($("body"));
 
-         	var animalBtn = $("<button>");
-
-
-            animalBtn.text(newAnimal);
-
-            $("#animalButtons").after(animalBtn);
-
+              
         }
     });
 
 
-
-createBtns();
+   
 
     function createBtns() {
 
-    		animal = ["dog", "cat"]
- 
+        animal = ["dog", "cat"]
+
         for (var i = 0; i < animal.length; i++) {
 
- 
+
             var animalBtn = $("<button>");
 
             animalBtn.attr("data-animal", animal[i]);
