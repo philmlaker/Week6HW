@@ -20,6 +20,7 @@ $("document").ready(function() {
 
             $("#buttonContain").append(animalBtn);
 
+
         };
     };
 
@@ -29,14 +30,11 @@ var input = $(":button").add
 
     $('#buttonContain').on('click', "button", function() {
       
-         
-
 
         console.log($(this).text());
 
-        // if($(this).text() == $("#submit").text());
-
         var clickname = $(this).text();
+
         showGiphy(clickname);
 
 
@@ -96,7 +94,7 @@ var input = $(":button").add
 
           
             var newAnimalName = $("#animal-input").val().trim();
-            alert(newAnimalName);
+        
             animalArray.push(newAnimalName);
 
             $("#animal-form").trigger("reset");
@@ -104,6 +102,8 @@ var input = $(":button").add
             $("#buttonContain").empty();
 
             createBtns();
+
+            showGiphy(newAnimalName);
 
 
 
